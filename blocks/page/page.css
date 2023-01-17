@@ -1,0 +1,16 @@
+:root {
+  --white-color: #ffffff;
+  --blue-color: #1698D9;
+  --black-color: #000000;
+  --grey-color: #666666;
+  --light-grey-color: #F2F2F2;
+}
+
+.page {
+  font-family: "Trebuchet MS", sans-serif;
+  background-image: url("../../images/Pattern.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
