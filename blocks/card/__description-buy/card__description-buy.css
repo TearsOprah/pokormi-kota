@@ -1,3 +1,4 @@
 .card__description-buy {
   text-decoration: underline dashed;
+  cursor: pointer;
 }

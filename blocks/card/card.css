@@ -6,7 +6,7 @@
   border-radius: 11px;
   min-height: 472px;
   position: relative;
-  /*border: red 2px solid;*/
+  cursor: pointer;
 }
 
 .card::before {
@@ -21,25 +21,3 @@
   background: linear-gradient(135deg, transparent 29px, var(--blue-color) 29px);
   border-radius: 12px;
 }
-
-/*.card:hover::before {*/
-/*  background: linear-gradient(135deg, transparent 25px, rgb(135, 190, 253) 25px);*/
-/*}*/
-
-/*.card {*/
-/*  margin: 0;*/
-/*  padding: 0;*/
-/*  background: url("../../images/Border.svg") no-repeat;*/
-/*  background-size: 320px 480px;*/
-/*  min-height: 480px;*/
-/*}*/
-
-/*.st0 {*/
-/*  fill:#FFFFFF;*/
-/*  stroke:blue;*/
-/*  stroke-width:4px;*/
-/*}*/
-
-/*.st0:hover {*/
-/*  stroke: red;*/
-/*}*/

@@ -24,5 +24,5 @@
 }
 
 .grid-cards__item_disabled .card__label {
-  background-color: var(--medium-grey-color);
+  background-color: var(--grey-color);
 }
