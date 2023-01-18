@@ -1,3 +1,5 @@
+import './pages/index.css';
+
 const cards = document.querySelectorAll('.card');
 const links = document.querySelectorAll('.card__description-buy');
 const disabledCards = document.querySelectorAll('.grid-cards__item_disabled');
