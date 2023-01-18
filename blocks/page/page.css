@@ -4,7 +4,9 @@
   --black-color: #000000;
   --grey-color: #666666;
   --light-grey-color: #F2F2F2;
+  --medium-grey-color: #B3B3B3;
   --red-color: #D91667;
+  --yellow-color: #FFFF66;
 }
 
 .page {
@@ -20,4 +22,6 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  min-height: 100vh;
+  gap: 25px;
 }

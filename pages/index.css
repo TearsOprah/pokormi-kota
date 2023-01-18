@@ -23,3 +23,4 @@
 
 @import url(../blocks/card/_selected/card_selected.css);
 @import url(../blocks/card/__label/_selected/card__label_selected.css);
+@import url(../blocks/grid-cards/__item/_disabled/grid-cards__item_disabled.css);

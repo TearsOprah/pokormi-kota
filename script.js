@@ -1,5 +1,6 @@
 const cards = document.querySelectorAll('.card');
 const links = document.querySelectorAll('.card__description-buy');
+const disabledCards = document.querySelectorAll('.grid-cards__item_disabled');
 
 const descriptions = {
   'с фуа-гра': 'Печень утки разварная с артишоками.',
@@ -9,6 +10,11 @@ const descriptions = {
 
 // сохраняем оригинальную разметку описания
 const originalDescription = document.querySelector('.original-description').innerHTML;
+
+disabledCards.forEach(card => {
+  const subTitle = card.querySelector('.card__subtitle').textContent;
+  card.querySelector('.card__description').textContent = `Печалька, ${subTitle} закочился.`
+})
 
 function selectCard(ev, card) {
 
@@ -74,3 +80,4 @@ function linkClick(ev) {
 links.forEach((link) => {
   link.addEventListener('click', linkClick)
 })
+

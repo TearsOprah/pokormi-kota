@@ -5,3 +5,21 @@
   gap: 88px;
   grid-template-columns: repeat(3, 312px);
 }
+
+@media screen and (max-width: 1160px) {
+  .grid-cards {
+    gap: 30px;
+  }
+}
+
+@media screen and (max-width: 1020px) {
+  .grid-cards {
+    grid-template-columns: repeat(2, 312px);
+  }
+}
+
+@media screen and (max-width: 680px) {
+  .grid-cards {
+    grid-template-columns: 312px;
+  }
+}
