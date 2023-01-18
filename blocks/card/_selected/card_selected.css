@@ -1,0 +1,4 @@
+.card_selected::before {
+  background-color: var(--red-color);
+  background: linear-gradient(135deg, transparent 29px, var(--red-color) 29px);
+}

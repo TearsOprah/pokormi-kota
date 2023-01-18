@@ -1,0 +1,3 @@
+.card__label_selected {
+  background-color: var(--red-color);
+}
