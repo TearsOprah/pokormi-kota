@@ -10,46 +10,55 @@ const descriptions = {
 // сохраняем оригинальную разметку описания
 const originalDescription = document.querySelector('.original-description').innerHTML;
 
-// приравняем клик по 'купи' к клику по карточке
-function clickLink(ev) {
-  ev.preventDefault();
-  ev.target.closest('.grid-cards__item').querySelector('.card').click();
+function selectCard(ev, card) {
+
+  // накидываем класс выделения на карточку
+  card.classList.toggle('card_selected')
+
+  // ищем наклейку с весом и накидываем ей класс выделения
+  ev.target.closest('.grid-cards__item')
+    .querySelector('.card__label')
+    .classList.toggle('card__label_selected')
+
+  // ищем подзаголовок
+  const subTitle = card.querySelector('.card__subtitle').textContent;
+
+  // ищем элемент с описанием
+  const descriptionElement = ev.target.closest('.grid-cards__item')
+    .querySelector('.card__description');
+
+  // если карточка выделена - меняем описание, если нет - возвращаем оригинальное
+  if (card.classList.contains('card_selected')) {
+    descriptionElement.textContent = descriptions[subTitle];
+  } else {
+    descriptionElement.innerHTML = originalDescription
+  }
 }
 
 // проходим по всем карточкам и вешаем слушатель
 cards.forEach((card) => {
-  card.addEventListener('click', (ev) => {
 
-    // накидываем класс выделения на карточку
-    card.classList.toggle('card_selected')
+  // значение при инициализации - не кликнуто
+  let isClicked = false;
 
-    // ищем наклейку с весом и накидываем ей класс выделения
-    ev.target.closest('.grid-cards__item')
-      .querySelector('.card__label')
-      .classList.toggle('card__label_selected')
+  // при клике по карточке меняем значение
+  card.addEventListener('click', () => {
+    isClicked = true;
+  })
 
-    // ищем подзаголовок
-    const subTitle = card.querySelector('.card__subtitle').textContent;
-
-    // ищем элемент с описанием
-    const descriptionElement = ev.target.closest('.grid-cards__item')
-      .querySelector('.card__description');
-
-    // если карточка выделена - меняем описание, если нет - возвращаем оригинальное
-    if (card.classList.contains('card_selected')) {
-      descriptionElement.textContent = descriptions[subTitle];
-    } else {
-      descriptionElement.innerHTML = originalDescription
+  // если курсор покинул карточку - выделяем ее
+  card.addEventListener('mouseleave', (ev) => {
+    if (isClicked) {
+      selectCard(ev, card)
     }
+  })
 
-    // ищем ссылку купи
-    const link = ev.target.closest('.grid-cards__item').querySelector('.card__description-buy')
-
-    // извне работать не будет при перезаписи оригинального описания
-    link.addEventListener('click', clickLink)
+  // если курсор навелся - снимаем клик
+  card.addEventListener('mouseenter', () => {
+    isClicked = false
   })
 })
 
-links.forEach((link) => {
-  link.addEventListener('click', clickLink)
-})
+// links.forEach((link) => {
+//   link.addEventListener('click', clickLink)
+// })
