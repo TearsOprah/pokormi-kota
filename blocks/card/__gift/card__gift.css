@@ -1,3 +1,15 @@
 .card__gift {
+  margin: 0;
+  padding: 0;
+  max-width: 127px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 16px;
+  letter-spacing: 0;
+  text-align: left;
+  color: var(--grey-color);
+}
 
+.card__gift span {
+  font-weight: 700;
 }

@@ -7,10 +7,16 @@
 }
 
 .page {
+  margin: 0;
+  padding: 0;
   font-family: "Trebuchet MS", sans-serif;
   background-image: url("../../images/Pattern.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
