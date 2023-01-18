@@ -32,6 +32,10 @@ function selectCard(ev, card) {
     descriptionElement.textContent = descriptions[subTitle];
   } else {
     descriptionElement.innerHTML = originalDescription
+
+    // т.к. описание перезаписалось - внешний link.addEventListener не сработает
+    const link = ev.target.closest('.grid-cards__item').querySelector('.card__description-buy')
+    link.addEventListener('click', linkClick)
   }
 }
 
@@ -59,6 +63,14 @@ cards.forEach((card) => {
   })
 })
 
-// links.forEach((link) => {
-//   link.addEventListener('click', clickLink)
-// })
+
+// при клике по ссылке вызываем selectCard
+function linkClick(ev) {
+  ev.preventDefault()
+  const card = ev.target.closest('.grid-cards__item').querySelector('.card')
+  selectCard(ev, card)
+}
+
+links.forEach((link) => {
+  link.addEventListener('click', linkClick)
+})
